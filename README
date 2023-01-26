@@ -1,4 +1,4 @@
-The scripts of this project can be found in program_scripts and ran like so:
+The scripts of this project can be found in `program_scripts` and ran like so:
  sh local.sh <seqs.txt> <mat.m> <gap penalty>
  sh seeding.sh <db.txt> <query.txt> <mat.m> <k> <T>
  sh extension.sh <db.txt> <mat.m> <seeds.txt> <X> <S>
