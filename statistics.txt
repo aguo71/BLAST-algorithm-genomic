@@ -1,0 +1,39 @@
+1. 
+L: 804/8076 = 0.0995542347697
+E: 682/8076 = 0.0844477464091
+G: 594/8076 = 0.0735512630015
+A: 562/8076 = 0.0695889053987
+S: 562/8076 = 0.0695889053987
+K: 510/8076 = 0.0631500742942
+R: 458/8076 = 0.0567112431897
+Q: 436/8076 = 0.0539871223378
+V: 414/8076 = 0.0512630014859
+D: 398/8076 = 0.0492818226845
+P: 398/8076 = 0.0492818226845
+T: 376/8076 = 0.0465577018326
+I: 356/8076 = 0.0440812283309
+N: 331/8076 = 0.0409856364537
+F: 295/8076 = 0.0365279841506
+Y: 259/8076 = 0.0320703318474
+M: 195/8076 = 0.0241456166419
+H: 175/8076 = 0.0216691431402
+C: 148/8076 = 0.0183259039128
+W: 123/8076 = 0.0152303120357
+
+2. The sorted alignment scores are as follows.
+[40, 41, 43, 43, 44, 46, 47, 47, 49, 49, 49, 50, 50, 50, 50, 52, 52, 52, 52, 52, 52, 53, 53, 
+53, 53, 53, 53, 54, 54, 55, 55, 55, 55, 55, 55, 55, 56, 57, 57, 58, 58, 58, 60, 60, 
+63, 65, 65, 65, 68, 75]
+
+3. For the most part, these scores seem to all be clustered around the random of 40-68. However, there is one slight outlier (75)
+that is a bit larger than the next largest score, but the others 49 scores seem to be comparable. However, these are all relatively low values
+given how long the sequences are.
+
+4. These statistics show that if we generated random sequences with the same statistics as sequences present in the given dataset, these generated
+sequences, when compared with each other, are largely dissimilar. This means there is a low chance that extended hits of a kmer of the query
+aligns with multiple kmers from different datasets, showing that when BLAST returns similarity scores between the query and multiple dataset sequences,
+they are likely true representations of the query and its similarity to different dataset entries, rather than results based solely on the fact that
+all the dataset entries were similar enough to begin with. Additionally, the average of these alignment scores gives us an estimate of what
+random similarity looks like, which means that if we see an aligment score from BLAST between a query and database sequence that is greater than
+the average (which in this case is around 50), we know that this BLAST-determined similarity is statistically significant and not due to random
+chance. Thus, the average of the alignment scores we just calculated can serve as the "S" cut-off score used to filter HSP's.

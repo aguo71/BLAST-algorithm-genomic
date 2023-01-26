@@ -1,0 +1,11 @@
+The scripts of this project can be found in program_scripts and ran like so:
+ sh local.sh <seqs.txt> <mat.m> <gap penalty>
+ sh seeding.sh <db.txt> <query.txt> <mat.m> <k> <T>
+ sh extension.sh <db.txt> <mat.m> <seeds.txt> <X> <S>
+ sh statistics.sh P4db.txt pam250.m
+
+The program has 4 main files. Each correspond to a problem of the project, on the whole corresponding to the BLAST algorithm used in genomic research.
+
+The only auxiliary file I created were two test files, test_cases/seeding/query3.txt and databases/db3.txt.
+
+No known bugs.
